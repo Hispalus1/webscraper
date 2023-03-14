@@ -36,7 +36,7 @@ def comma(i):
 with open("anime.json", "w", encoding='utf-8') as file:
     file.write('[')
     for i in range(0, 50):
-        row = f'"id": {i + 1},\n "title": "{name_anime[i]}",\n"type": "{detail_anime[i][0]}",\n"aired": "{detail_anime[i][1]}",\n"members": "{detail_anime[i][2][0:].split(" ")[0].replace(",", "")}",\n "score": "{score_anime[i]}"'
+        row = f'"id": {i + 1},\n "title": "{name_anime[i]}",\n"type": "{detail_anime[i][0].split(" ")[0]}",\n"episodes": "{detail_anime[i][0].split(" ")[1].replace(")","").replace("(","")}",\n"aired": "{detail_anime[i][1]}",\n"members": "{detail_anime[i][2][0:].split(" ")[0].replace(",", "")}",\n "score": "{score_anime[i]}"'
         row = '{' + row + '} '
         print(row)
         file.write(row)

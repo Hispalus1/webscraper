@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field
 class AnimeRecord(BaseModel):
     title: str
     type: str
+    episodes: int
     aired: str
     members: int
     score: float
